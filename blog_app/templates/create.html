@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+     {% load static %}
+    <style>
+         #myid1{background-image=url("{% static 'wood2.jpg' %}");
+                background-repeat:no-repeat;
+                background-size:cover;
+                background-attachment:fixed;
+                background-position:center;}
+
+         .button {
+                  background-color: black;
+                  border: none;
+                  color: white;
+                  padding: 10px 15px;
+                  text-align: center;
+                  text-decoration: none;
+                  display: inline-block;
+                  font-size: 16px;
+                  margin: 4px 2px;
+                  cursor: pointer;
+                }
+
+
+
+        #f1{position:absolute;
+            top:35%;
+            left:30%;
+            font-size:20px;
+            color:BLACK;
+            text-transform:Capitalize;}
+         #b1{position:absolute;
+            top:105%;
+            left:0%;
+            background-color:black;
+            color:white;
+
+            border-width:2px;
+            font-size:18px;
+            text-decoration:underline}
+
+          #f2{position:absolute;
+            top:87%;
+            left:66%;
+            font-size:18px;
+            color:white;
+            text-transform:Capitalize;}
+
+         #b2{position:absolute;
+            top:105%;
+            left:40%;
+            background-color:black;
+            color:white;
+
+            border-width:2px;
+            font-size:18px;
+            text-decoration:underline}
+
+         header{padding:10%;
+                padding-bottom: 5px;
+
+                font-size:60px;
+                color:black;
+                font-family : arial bold;
+                 }
+
+        .container {
+        margin: auto;
+
+  width: 55rem;
+  height: 35rem;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, .15);
+    text-align: left;
+  backdrop-filter: blur(5px);
+}
+
+    </style>
+    <meta charset="UTF-8">
+    <title>Create Your Blog</title>
+</head>
+<body background="{% static 'images/CREATE1.jpg' %}" align="center" id="myid1">
+<div class="container" >
+        <header style="text-align:center;" > CREATE BLOG </header>
+
+        <form action="add"  method="post" id="f1">
+
+            {{form.as_p}}
+
+            {% csrf_token %}
+
+            <button type="submit" class="button">ADD BLOG</button>
+
+        </form>
+        <form action="home"    id="f2">
+
+            <button type="submit" class="button" id="home">HOME </button>
+
+        </form>
+<!--        <img src="{% static 'images/software.png' %}">-->
+</div>
+
+</body>
+</html>

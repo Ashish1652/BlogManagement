@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    {% load static %}
+    <style>
+         #myid1{background-image=url("{% static 'wood2.jpg' %}");
+                background-repeat:no-repeat;
+                background-size:cover;
+                background-attachment:fixed;
+                background-position:center;}
+
+        header{padding:10%;
+                padding-bottom: 5px;
+
+                font-size:60px;
+                color:black;
+                font-family : arial bold;
+                 }
+
+        p{
+                font-size:16px;
+                font-family : arial bold
+                }
+
+        #button1{position:absolute;
+            top:60%;
+            left:25%;
+            background-color:black;
+            color:white;
+            border-style:ridge;
+            border-width:2px;
+            font-size:25px;}
+
+
+         #button2{position:absolute;
+            top:60%;
+            left:60%;
+            background-color:black;
+            color:white;
+            border-style:ridge;
+            border-width:2px;
+            font-size:25px;}
+
+
+
+    </style>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+</head>
+<body background="{% static 'images/HOMEPAGE.jpg' %}" align="center" id="myid1">
+<header style="text-align:center;" > BLOG HOME PAGE</header>
+<p style="text-align:center;">  Publish your passions, your way Create a unique and beautiful blog.</br> It’s easy and free.</p>
+
+<form action="create" >
+
+    <button type="submit" id="button1" >Create Your Blogs</button>
+</form>
+
+<form action="display" >
+    <button type="submit" id="button2" >Read Blog</button>
+</form>
+
+	<img src="{% url 'livecam_feed' %}">
+
+
+
+</body>
+</html>

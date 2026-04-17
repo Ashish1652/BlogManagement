@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <style>
+         #myid1{background-image=url("{% static 'wood2.jpg' %}");
+                background-repeat:no-repeat;
+                background-size:cover;
+                background-attachment:fixed;
+                background-position:center;}
+         #fd1{background-size:cover;
+                background-color:White;
+                 }
+
+         h1{padding-top: 0px;
+            font-size:65px;
+            color:BLack ;}
+
+         h2{padding-top: 6px;
+            font-size:25px;}
+
+         h3{padding-top: 25px;
+            font-size:35px;}
+
+         h4{ font-size:20px;}
+
+         p{ font-size:20px;}
+
+         a {padding-top: 30px;
+            display:inline-block;
+            margin-right:50px;
+            text-align:center;
+            color:white;
+            padding: 7px 15px;
+            background-color: black;}
+
+          #button {
+                  background-color: black;
+                  border: none;
+                  color: white;
+                  padding: 8px 10px;
+                  text-align: center;
+                  text-decoration: none;
+                  display: inline-block;
+                  font-size: 10px;
+                  margin: 4px 1260px;
+                  cursor: pointer;
+                }
+
+
+
+        .container {
+            margin: auto;
+          width: 82rem;
+          height: 30rem;
+          box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+          border-radius: 5px;
+          background-color: rgba(255, 255, 255, .15);
+
+          backdrop-filter: blur(5px);
+        }
+
+
+    </style>
+    <meta charset="UTF-8">
+    <title>Read Blog's</title>
+</head>
+
+<body background="{% static 'images/5291450.jpg' %}" align="center" id="myid1">
+
+            <FORM action="/">
+                 <button type="submit" id="button" ><img src="{% static 'images/home_button.png' %}"> Home </button>
+
+            </FORM>
+
+                    <h1>Blog's Title : </h1>
+
+<form action="search" method="get" >
+
+          <select  name="searched" >
+              {% for i in rec%}
+                    <option> {{i.title}} </option>
+              {% endfor %}
+          </select >
+
+    <button type="submit"> Search </button>
+</form>
+
+
+    <h2>The Blog Element</h2>
+        {% for i in rec%}
+    <div class="container">
+            <H3>  {{i.title}} </H3>
+            <h4>{{i.name}} , {{i.time}}</h4>
+            <p> {{i.summery}} </p>>
+
+        <a href="edit/{{i.id}}">EDIT</a>         <a href="delete/{{i.id}}">DELETE</a>
+    </div>
+        {% endfor %}
+
+
+
+
+</body>
+</html>

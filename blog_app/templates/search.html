@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    {% load static %}
+    <style>
+        #myid1{background-image=url("{% static 'wood2.jpg' %}");
+               background-repeat:no-repeat;
+               background-size:cover;
+               background-attachment:fixed;
+               background-position:center;}
+        #fd1{background-size:cover;
+               background-color:White;
+                }
+
+        h1{padding-top: 0px;
+           font-size:45px;
+           color:BLack ;}
+
+         h2{padding-top: 2px;
+           font-size:30px;}
+
+        h3{padding-top: 5px;
+           font-size:32px;}
+
+        h4{padding-top: 2px;
+           font-size:20px;}
+
+        p{ font-size:20px;}
+
+
+       .container {
+           margin: auto;
+         width: 82rem;
+         height: 25rem;
+         box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+         border-radius: 5px;
+         background-color: rgba(255, 255, 255, .15);
+         backdrop-filter: blur(5px);
+
+       }
+
+       #button {
+                 background-color: black;
+                 border: none;
+                 color: white;
+                 padding: 8px 10px;
+                 text-align: center;
+                 text-decoration: none;
+                 display: inline-block;
+                 font-size: 10px;
+                 margin: 4px 1260px;
+                 cursor: pointer;
+               }
+
+    </style>
+    <meta charset="UTF-8">
+    <title>Read Blog's</title>
+</head>
+
+<body background="{% static 'images/5291450.jpg' %}" id="myid1">
+
+<FORM action="/">
+    <button id="button" type="submit"><img src="{% static 'images/home_button.png' %}"> Home</button>
+
+</FORM>
+<h1 align="center">Specific Blog</h1>
+
+
+{% if searched%}
+<h2 align="center">You search for</h2>
+
+<div align="center" class="container">
+    <h3 align="center"> {{searched}} </h3>
+    {% for i in data %}
+    <h4>{{i.name}} , {{i.time}}</h4>
+    <P> {{i.summery}}</P>
+    {% endfor %}
+
+    {% endif %}
+
+</div>
+
+
+</body>
+</html>
